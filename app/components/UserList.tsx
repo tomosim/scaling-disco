@@ -1,13 +1,19 @@
-import useProfiles from "../useProfiles";
+import { FlatList } from "react-native";
+import useProfiles from "../hooks/useProfiles";
 import User from "./User";
 
 const UserList = () => {
-  const { profiles } = useProfiles();
+	const { profiles } = useProfiles();
 
-  return profiles?.map((profile) => (
-    <User
-      key={profile.id}
-      {...profile}
-    />
-  ));
+	return (
+		<FlatList
+			numColumns={3}
+			data={profiles}
+			renderItem={({ item }) => {
+				return <User profile={item} />;
+			}}
+		/>
+	);
 };
+
+export default UserList;
