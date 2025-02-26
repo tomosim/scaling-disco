@@ -5,9 +5,11 @@ import User from "./User";
 const UserList = () => {
 	const { profiles } = useProfiles();
 
+	console.log(profiles);
+
 	return (
 		<FlatList
-			numColumns={3}
+			numColumns={2}
 			data={profiles}
 			renderItem={({ item }) => {
 				return <User profile={item} />;
