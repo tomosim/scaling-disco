@@ -5,8 +5,6 @@ import User from "./User";
 const UserList = () => {
 	const { profiles } = useProfiles();
 
-	console.log(profiles);
-
 	return (
 		<FlatList
 			numColumns={2}
